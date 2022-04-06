@@ -1,9 +1,9 @@
+import argparse
 import os
 import requests
-from urllib.parse import urlparse
+
 from dotenv import load_dotenv
-import argparse
-load_dotenv()
+from urllib.parse import urlparse
 
 
 def shorten_link(headers, received_link, custom_domain):
@@ -48,6 +48,7 @@ def cut_url_protocol(url):
 
 
 def main():
+    load_dotenv()
     bitly_auth_token = os.getenv('BITLY_TOKEN')
     bitly_custom_domain = os.getenv('CUSTOM_DOMAIN')
     http_headers = {
@@ -65,7 +66,9 @@ def main():
                 sum_clicks(http_headers, cut_url_protocol(received_link))
             )
         else:
-            print('Битлинк', shorten_link(http_headers, received_link, bitly_custom_domain))
+            print('Битлинк', shorten_link(
+                http_headers, received_link, bitly_custom_domain)
+                  )
     except requests.exceptions.HTTPError:
         print('Вы ввели неправильную ссылку или неверный токен.')
     except requests.exceptions.MissingSchema:
