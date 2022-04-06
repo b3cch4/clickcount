@@ -1,11 +1,20 @@
-Bitly url shorterer
-[TODO: here would be project description]
+# Программа ClickCount
+Программа для укорачивания ссылок с помощью сервиса https://bitly.com
 
-How to install
-[TODO: tell user where he should get keys, where they should be and how they look like]
+Если в программу ввести битли ссылку, она посчитает количество переходов. 
 
-Python3 should be already installed. Then use pip (or pip3, if there is a conflict with Python2) to install dependencies:
+## Установка
+Клонировать репозиторий локально на компьютер.
+Получить токен на bitly.com
+Поместить токен в корневой файл .env
 
+## Требования
+```
 pip install -r requirements.txt
-Project Goals
-The code is written for educational purposes on online-course for web-developers dvmn.org.
+```
+
+
+
+
+
+
